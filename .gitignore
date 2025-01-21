@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 dist
-# dependencies
-/node_modules
+tags*
+# dependencies /node_modules
 
 # testing
 /coverage
@@ -29,3 +29,11 @@ prisma/dev.db-journal
 
 # Pact
 pacts
+
+# Playwright
+/test-results
+/plawyright-report
+/blob-report
+/playwright/.cache
+node_modules/
+/playwright-report/
