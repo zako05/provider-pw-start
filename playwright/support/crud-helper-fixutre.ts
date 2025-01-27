@@ -52,7 +52,7 @@ export const test = baseApiRequestFixture.extend<{
     ): Promise<ApiRequestResponse<ServerResponse<Movie>>> => {
       return apiRequest<ServerResponse<Movie>>({
         method: 'POST',
-        url: '/movie',
+        url: '/movies',
         baseUrl,
         body,
         headers: commonHeaders(token)
@@ -137,7 +137,7 @@ export const test = baseApiRequestFixture.extend<{
       baseUrl?: string
     ): Promise<ApiRequestResponse<ServerResponse<void>>> => {
       return apiRequest<ServerResponse<void>>({
-        method: 'PUT',
+        method: 'DELETE',
         url: `/movies/${id}`,
         baseUrl,
         headers: commonHeaders(token)

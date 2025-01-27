@@ -9,7 +9,7 @@ type ApiRequestParams = {
   headers?: Record<string, string>
 }
 
-type ApiRequestResponse<T = unknown> = {
+export type ApiRequestResponse<T = unknown> = {
   status: number
   body: T
 }
