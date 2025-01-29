@@ -1,11 +1,11 @@
-name: Run e2e tests
+name: Run e2e Cypress tests
 on:
   pull_request:
   workflow_dispatch:
 
 # if this branch is pushed back to back, cancel the older branch's workflow
 concurrency:
-  group: ${{ github.ref }} && ${{ github.workflow }}
+  group:  ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -19,7 +19,7 @@ env:
   KAFKAJS_NO_PARTITIONER_WARNING: 1 # less kafka noise
 
 jobs:
-  e2e-test:
+  e2e-test-cy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
